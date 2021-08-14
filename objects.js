@@ -8,3 +8,9 @@ const bicycle = {
   };
 
 console.log(bicycle.color);
+console.log(bicycle['color']);
+console.log(bicycle.wheels.width);
+console.log(bicycle['wheels']['width']);
+const myVariable = 'color';
+console.log(bicycle[myVariable]); // good
+console.log(bicycle.myVariable); // returns undefined
