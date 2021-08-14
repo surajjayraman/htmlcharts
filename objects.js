@@ -47,3 +47,46 @@ console.log(printer);
 //removing properties
 console.log(delete printer.mode);
 console.log(printer);
+
+//passing an object
+//if you pass an object into a function, Javascript passes a reference to that object.
+let originalObject = {
+    favoriteColor : 'red'
+};
+
+function setToBlue(object){
+    object.favoriteColor = 'blue';
+}
+setToBlue(originalObject);
+console.log(originalObject.favoriteColor);
+
+//re-assigning an object to a new variable, and then changing that copy.
+const iceCreamOriginal = {
+    Andrew : 3,
+    Richard : 15
+}
+const iceCreamCopy = iceCreamOriginal;
+console.log(iceCreamCopy.Richard);
+iceCreamCopy.Richard = 99;
+console.log(iceCreamCopy.Richard, iceCreamOriginal.Richard);
+
+//comparing objects
+const parrot = {
+    group: 'bird',
+    feathers: true,
+    chirp: function () {
+      console.log('Chirp chirp!');
+    }
+  };
+  
+  const pigeon = {
+    group: 'bird',
+    feathers: true,
+    chirp: function () {
+      console.log('Chirp chirp!');
+    }
+  };
+  console.log(parrot === pigeon); // returns false
+  const myBird = parrot;
+  console.log(myBird === parrot); // returns true
+  console.log(myBird === pigeon); // returns false
