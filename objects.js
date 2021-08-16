@@ -154,3 +154,9 @@ const chameleon = {
     }
 };
 console.log(chameleon.changeColor());
+let tricky = false;
+const whoThis = () => { 
+  this.tricky = true;
+  return tricky;
+}
+console.log(whoThis());
