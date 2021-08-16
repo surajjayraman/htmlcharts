@@ -90,3 +90,67 @@ const parrot = {
   const myBird = parrot;
   console.log(myBird === parrot); // returns true
   console.log(myBird === pigeon); // returns false
+
+  //calling Methods
+  const developer = {
+      name : 'Andrew'
+  };
+  //add method
+  developer['sayHello'] = function() {
+      console.log("Hi there!");
+  }
+  console.log(developer);
+  developer.sayHello();
+  developer['sayHello']();
+
+  //passing arguments into methods
+  developer.favoriteLanguage = function(language) {
+      console.log(`My favorite programming language is ${language}`);
+  };
+  
+  console.log(developer.favoriteLanguage('JavaScript'));
+
+  //invoking object menthods
+  const myArray = [function alerter() {console.log('Hello');}];
+  console.log(myArray[0]());
+  const bell = {
+    color: 'gold',
+    ring: function () {
+      console.log('Ring ring ring!');
+    }
+  };
+  console.log(bell.ring());
+
+  //Using this, methods can directly access the object that it is called on
+  const triangle = {
+    type: 'scalene',
+    identify: function () {
+      console.log(`This is a ${this.type} triangle.`);
+    },
+    whatIsThis: function(){
+        console.log(this);
+    }
+  };
+  triangle.identify();
+  triangle.whatIsThis();
+/*
+
+Create an object called `chameleon` with two properties:
+
+1. `color`, whose value is initially set to 'green' or 'pink'
+2. `changeColor`, a function which changes `chameleon`'s `color` to 'pink'
+    if it is 'green', or to 'green' if it is 'pink'
+
+*/
+const chameleon = {
+    color: 'green',
+    changeColor: function() {
+        if(this.color === 'green'){
+            this.color = 'pink';
+        } else {
+            this.color = 'green';
+        }
+        return this.color;
+    }
+};
+console.log(chameleon.changeColor());
